@@ -278,7 +278,7 @@ const App: React.FC = () => {
               <div className="flex flex-col items-center gap-4 text-text-main dark:text-gray-300">
                 <div className="flex items-center gap-4">
                   <div className="dark:bg-white/90 dark:px-2 dark:py-1 dark:rounded-lg">
-                    <img alt="ZembiLab Logo" className="h-16 w-auto opacity-90 mix-blend-multiply dark:mix-blend-normal" src="https://r.resimlink.com/TJDVsF7BEXj.jpg"/>
+                    <img alt="ZembiLab Logo" className="h-16 w-auto opacity-90" src="https://r.resimlink.com/QBrXanvj5.png"/>
                   </div>
                 </div>
                 <p className="text-sm text-text-main/70 dark:text-gray-400 font-medium">Gelenek ve teknolojinin buluştuğu yer.</p>

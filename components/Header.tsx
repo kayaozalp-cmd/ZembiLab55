@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
             <img 
               alt="ZembiLab Logo" 
               className="h-24 md:h-32 w-auto object-contain drop-shadow-sm" 
-              src="https://r.resimlink.com/TJDVsF7BEXj.jpg"
+              src="https://r.resimlink.com/QBrXanvj5.png"
             />
           </div>
         </a>
