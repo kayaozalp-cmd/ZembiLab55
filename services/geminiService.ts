@@ -1,12 +1,13 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
-// API Anahtarı Güvenliği:
-// Anahtar doğrudan kod içine yazılmamalıdır.
-// Proje derlenirken veya çalıştırılırken 'process.env.API_KEY' üzerinden alınmalıdır.
-const apiKey = process.env.API_KEY || '';
+// Kullanıcı isteği üzerine API anahtarı doğrudan koda eklenmiştir.
+// Lütfen bu dosyayı GitHub'a yüklediğinizden emin olun.
+const apiKey = 'AIzaSyC0ZRoZkQ7jfJ-lhQxSNw91UF_JiCqFvvg';
 
 // Initialize Gemini Client
 const ai = new GoogleGenAI({ apiKey });
+
+console.log("ZembilAI Servisi Başlatıldı (API Key Gömülü)");
 
 const SYSTEM_INSTRUCTION = `
 Sen ZembiLab'ın yapay zeka asistanı "ZembilAI"sın. 
@@ -28,10 +29,6 @@ Kullanıcılarla Türkçe konuş. Samimi, eğitici ve yardımsever ol.
 `;
 
 export const askZembilAI = async (query: string): Promise<string> => {
-  if (!apiKey) {
-    return "⚠️ API Anahtarı Eksik: Güvenlik nedeniyle API anahtarı koddan kaldırılmıştır. Lütfen uygulamayı çalıştırırken geçerli bir API anahtarını çevre değişkeni (environment variable) olarak tanımlayınız.";
-  }
-
   try {
     const model = "gemini-2.5-flash";
     
@@ -68,6 +65,6 @@ export const askZembilAI = async (query: string): Promise<string> => {
     return text;
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "Bir bağlantı hatası oluştu. Lütfen API anahtarınızı ve internet bağlantınızı kontrol ediniz.";
+    return "Bir bağlantı hatası oluştu. Lütfen internet bağlantınızı kontrol ediniz.";
   }
 };
