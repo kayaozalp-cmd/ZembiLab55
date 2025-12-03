@@ -1,7 +1,11 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
-// Safely access process.env.API_KEY to prevent crashes in environments where process is undefined
-const apiKey = (typeof process !== 'undefined' && process.env && process.env.API_KEY) || '';
+// API Anahtarı Güvenliği:
+// Anahtar doğrudan kod içine yazılmamalıdır.
+// Proje derlenirken veya çalıştırılırken 'process.env.API_KEY' üzerinden alınmalıdır.
+const apiKey = process.env.API_KEY || '';
+
+// Initialize Gemini Client
 const ai = new GoogleGenAI({ apiKey });
 
 const SYSTEM_INSTRUCTION = `
@@ -25,7 +29,7 @@ Kullanıcılarla Türkçe konuş. Samimi, eğitici ve yardımsever ol.
 
 export const askZembilAI = async (query: string): Promise<string> => {
   if (!apiKey) {
-    return "API anahtarı bulunamadı. Lütfen yapılandırmayı kontrol edin.";
+    return "⚠️ API Anahtarı Eksik: Güvenlik nedeniyle API anahtarı koddan kaldırılmıştır. Lütfen uygulamayı çalıştırırken geçerli bir API anahtarını çevre değişkeni (environment variable) olarak tanımlayınız.";
   }
 
   try {
@@ -64,6 +68,6 @@ export const askZembilAI = async (query: string): Promise<string> => {
     return text;
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.";
+    return "Bir bağlantı hatası oluştu. Lütfen API anahtarınızı ve internet bağlantınızı kontrol ediniz.";
   }
 };

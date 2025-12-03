@@ -26,18 +26,21 @@ export const AiAssistant: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 md:p-10 text-center items-center transition-all duration-300">
-      <div className="flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-bold leading-tight tracking-tight text-black dark:text-white md:text-4xl">ZembilAI Asistan</h2>
-        <p className="text-md mx-auto max-w-2xl text-black/60 dark:text-white/60 md:text-lg">
+    <div className="flex flex-col gap-8 rounded-2xl border border-secondary/30 dark:border-white/10 bg-accent/50 dark:bg-surface-dark p-6 md:p-12 text-center items-center transition-all duration-300 shadow-sm">
+      <div className="flex flex-col gap-3 text-center">
+        <div className="mx-auto bg-white dark:bg-white/10 p-3 rounded-full shadow-sm mb-2">
+            <span className="material-symbols-outlined text-4xl text-primary dark:text-secondary">smart_toy</span>
+        </div>
+        <h2 className="text-3xl font-bold leading-tight tracking-tight text-text-main dark:text-white md:text-4xl">ZembilAI Asistan</h2>
+        <p className="text-md mx-auto max-w-2xl text-text-main/70 dark:text-gray-400 md:text-lg">
           Yapay zeka asistanımızla Bafra Zembili hakkında her şeyi öğrenin.
         </p>
       </div>
       
       <div className="w-full max-w-2xl space-y-6">
-        <div className="relative">
+        <div className="relative group">
           <input 
-            className="w-full h-14 pl-6 pr-40 rounded-full bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary transition-all shadow-sm" 
+            className="w-full h-14 pl-6 pr-40 rounded-full bg-white dark:bg-surface-light-dark border border-secondary/40 dark:border-white/10 text-text-main dark:text-white placeholder:text-text-main/40 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all shadow-sm group-hover:shadow-md" 
             placeholder="Bafra Zembili hakkında merak ettiklerini sor..." 
             type="text"
             value={query}
@@ -48,32 +51,32 @@ export const AiAssistant: React.FC = () => {
           <button 
             onClick={handleAsk}
             disabled={isLoading || !query.trim()}
-            className={`absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all hover:opacity-90 ${isLoading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all hover:bg-primary-dark ${isLoading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
           >
             {isLoading ? (
               <span className="flex items-center gap-2">
                 <span className="material-symbols-outlined animate-spin text-lg">progress_activity</span>
-                Düşünüyor...
+                Düşünüyor
               </span>
             ) : (
-              <span className="truncate">Yapay Zekaya Sor</span>
+              <span className="truncate">Sor</span>
             )}
           </button>
         </div>
 
         {/* Response Area */}
         {(response || isLoading) && (
-          <div className="text-left bg-white/10 dark:bg-black/20 rounded-2xl p-6 border border-black/5 dark:border-white/5 shadow-inner min-h-[100px] animate-in fade-in slide-in-from-bottom-2 duration-500">
+          <div className="text-left bg-white dark:bg-surface-light-dark rounded-2xl p-8 border border-secondary/20 dark:border-white/5 shadow-md min-h-[100px] animate-in fade-in slide-in-from-bottom-2 duration-500">
              {isLoading ? (
-               <div className="flex items-center justify-center h-20 gap-3 text-primary">
+               <div className="flex items-center justify-center h-20 gap-3 text-primary dark:text-secondary">
                  <span className="material-symbols-outlined animate-bounce">fiber_manual_record</span>
                  <span className="material-symbols-outlined animate-bounce delay-100">fiber_manual_record</span>
                  <span className="material-symbols-outlined animate-bounce delay-200">fiber_manual_record</span>
                </div>
              ) : (
-               <div className="prose prose-invert max-w-none">
-                 <div className="flex items-center gap-2 mb-4 text-primary font-bold border-b border-primary/20 pb-2">
-                    <span className="material-symbols-outlined">smart_toy</span>
+               <div className="prose prose-stone max-w-none text-text-main dark:text-gray-200">
+                 <div className="flex items-center gap-2 mb-4 text-primary-dark dark:text-secondary font-bold border-b border-secondary/20 dark:border-white/10 pb-2">
+                    <span className="material-symbols-outlined">auto_awesome</span>
                     <span>ZembilAI Cevabı:</span>
                  </div>
                  {renderMarkdownWithLinks(response || "")}
