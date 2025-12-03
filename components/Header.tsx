@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
             <img 
               alt="ZembiLab Logo" 
               className="h-24 md:h-32 w-auto object-contain drop-shadow-sm" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAafZX62OkHTfK6WbEkPUtdASHiTmLTlmsgdu_VZWZBdo7S_lgBmWah7Jlzk9I409Gy0sG8jM4vn_diezsapougDTSqBSMBs0WosQSP14_DMlDUB6E8uwDWJYjVn2idT9I6ia5T6RNtHQjH0Nt1-11C6pVVDWrG2pHvp7MiLNYj5Rv5Hf1v7GdFD6CeZ60tCtUFFSQMm6hyJaI9LQtAhWcyylGfsF0EENtsvPPBS0bdeWBdnWEYLxvPT7RhGVmDaShpRXCcHKCN5CY"
+              src="https://r.resimlink.com/TJDVsF7BEXj.jpg"
             />
           </div>
         </a>
@@ -47,12 +47,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAbout }) => {
 
       {/* Navigation Bar */}
       <header className="flex items-center justify-between whitespace-nowrap border-y border-solid border-secondary/30 dark:border-white/10 py-4 w-full bg-white/50 dark:bg-surface-dark/50 backdrop-blur-sm sticky top-0 z-50 transition-colors duration-300">
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center pl-4">
-          <button className="text-text-main dark:text-white hover:text-primary transition-colors">
-            <span className="material-symbols-outlined text-3xl">menu</span>
-          </button>
-        </div>
+        
+        {/* Mobile: Left spacer to balance layout since menu is removed */}
+        <div className="md:hidden flex w-10"></div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex flex-1 justify-center gap-10 items-center">

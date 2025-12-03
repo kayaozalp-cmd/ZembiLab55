@@ -278,7 +278,7 @@ const App: React.FC = () => {
               <div className="flex flex-col items-center gap-4 text-text-main dark:text-gray-300">
                 <div className="flex items-center gap-4">
                   <div className="dark:bg-white/90 dark:px-2 dark:py-1 dark:rounded-lg">
-                    <img alt="ZembiLab Logo" className="h-16 w-auto opacity-90 mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5s_j2wDWPajCwClpo9EbbqQECfirxJioN-t25YonwA8prliBzuhYGSYjAs86chedqt1Wbuqym5oc4Xt7fCPDfHSaKjc8XEpF8o5IIGyUQRpRbVOUPOPGx0UCCWQh1_eDa-9mpSxbleuYPaLs-A8WVitXqItvPxYBZa_pNP0W-GyNIVni9iWA5aYm2HacwwqW_mFf-zZguAV0b2lm83_QDVIbjT67eMUCRW1fFbl_3fhlPMIzxzNHff5Kf_JmDinOeaW9KqShXvGc"/>
+                    <img alt="ZembiLab Logo" className="h-16 w-auto opacity-90 mix-blend-multiply dark:mix-blend-normal" src="https://r.resimlink.com/TJDVsF7BEXj.jpg"/>
                   </div>
                 </div>
                 <p className="text-sm text-text-main/70 dark:text-gray-400 font-medium">Gelenek ve teknolojinin buluştuğu yer.</p>
